@@ -1,10 +1,9 @@
 let timer;
-let seconds = 1500;
-let pomodoroCount = 0;
-let totalSeconds = 1500;
+let seconds = 10;
+let totalSeconds = 10;
 let subjectData = JSON.parse(localStorage.getItem('pomodoroSubjects')) || {};
 let currentSubject = localStorage.getItem('currentSubject') || '';
-
+let pomodoroCount = parseInt(localStorage.getItem('pomodoroCount')) || 0;
 // Add debug logging
 console.log("Timer script initialized");
 
@@ -181,6 +180,9 @@ function startTimer() {
       clearInterval(timer);
       timer = null;
       pomodoroCount++;
+
+      localStorage.setItem('pomodoroCount', pomodoroCount);
+
       // Update subject statistics
       if (currentSubject) {
         if (!subjectData[currentSubject]) {
@@ -253,4 +255,9 @@ function resetTimer() {
   seconds = 1500;
   updateTimerDisplay();
 }
+
+console.log("Pomodoro completed!");
+console.log("New count:", pomodoroCount);
+console.log("Element found:", document.getElementById("pomodoro-count") !== null);
+console.log("LocalStorage value:", localStorage.getItem('pomodoroCount'));
 
