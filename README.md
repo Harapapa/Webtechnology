@@ -7,7 +7,7 @@
 System Requirements
 - Operating System: Windows, macOS, or Linux
 - Python: Version 3.7 or higher
--	Browser: Chrome, Firefox, Safari, or Edge (latest versions recommended)
+-	Browser: Chrome, Firefox, Safari, or Edge (latest versions recommended)  
 Python Dependencies
 -	Flask (2.0+)
 -	Flask-SQLAlchemy (2.5+)
