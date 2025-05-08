@@ -1,0 +1,31 @@
+ /* Add this for smooth transitions on the statistics bars */
+  #pomodoro-stats .bg-red-500,
+  #pomodoro-stats .bg-blue-500,
+  #pomodoro-stats .bg-green-500,
+  #pomodoro-stats .bg-yellow-500,
+  #pomodoro-stats .bg-purple-500,
+  #pomodoro-stats .bg-pink-500,
+  #pomodoro-stats .bg-indigo-500,
+  #pomodoro-stats .bg-orange-500 {
+    transition: width 0.5s ease-in-out;
+  }
+  
+  /* Tooltip for markers on hover */
+  #pomodoro-history div {
+    position: relative;
+  }
+  
+  #pomodoro-history div:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 10;
+  }
