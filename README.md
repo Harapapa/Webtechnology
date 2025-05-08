@@ -5,14 +5,14 @@
 ## Technical informations
 ### Requirements
 System Requirements
-•	Operating System: Windows, macOS, or Linux
-•	Python: Version 3.7 or higher
-•	Browser: Chrome, Firefox, Safari, or Edge (latest versions recommended)
+- Operating System: Windows, macOS, or Linux
+- Python: Version 3.7 or higher
+-	Browser: Chrome, Firefox, Safari, or Edge (latest versions recommended)
 Python Dependencies
-•	Flask (2.0+)
-•	Flask-SQLAlchemy (2.5+)
-•	SQLite3 (included with Python)
-•	Collections (built-in module)
+-	Flask (2.0+)
+-	Flask-SQLAlchemy (2.5+)
+-	SQLite3 (included with Python)
+-	Collections (built-in module)
 Development tools
-•	VSCode or PyCharm for development (was created in VSCode)
-•	Browser for frontend debugging
+-	VSCode or PyCharm for development (was created in VSCode)
+-	Browser for frontend debugging
