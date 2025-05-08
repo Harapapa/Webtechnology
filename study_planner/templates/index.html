@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StudyOS Dashboard</title>
+    <title>Study Planner</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Add Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,8 +40,8 @@
 
   <!-- Header -->
   <header class="bg-white shadow p-4">
-    <h1 class="text-2xl md:text-3xl font-bold text-center text-blue-600">🎓 StudyOS - Egyetemi Dashboard</h1>
-    <p class="text-sm md:text-base text-center text-gray-500">Kezeld a feladataid, céljaid és tanulási statisztikáid egy helyen</p>
+    <h1 class="text-2xl md:text-3xl font-bold text-center text-blue-600">🎓 Study Planner</h1>
+    <p class="text-sm md:text-base text-center text-gray-500">Webpage for study statistics</p>
   </header>
 
   <!-- Main content -->
@@ -49,12 +49,12 @@
     <!-- Pomodoro Timer Section -->
     <section class="bg-white p-5 rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100">
       <h2 class="text-lg md:text-xl font-semibold mb-3 md:mb-4 flex items-center gap-2">
-        <span class="text-red-500">⏱️</span> Pomodoro Időzítő
+        <span class="text-red-500">⏱️</span> Pomodoro timer
       </h2>
       <div class="mb-4 text-center">
-        <label for="pomodoro-subject" class="block text-sm font-medium text-gray-600 mb-1">Aktuális tantárgy:</label>
+        <label for="pomodoro-subject" class="block text-sm font-medium text-gray-600 mb-1">Actual subject:</label>
         <select id="pomodoro-subject" class="px-3 py-2 border rounded-lg bg-white text-gray-800 focus:ring-2 focus:ring-red-500 focus:border-red-500 w-full max-w-[250px] mx-auto">
-          <option value="">-- Válassz tantárgyat --</option>
+          <option value="">-- Choose a subject --</option>
           <!-- Subjects will be added dynamically -->
         </select>
       </div>
@@ -96,11 +96,10 @@
           Reset
         </button>
       </div>
-      <p id="mode" class="text-center mt-3 md:mt-4 text-xs md:text-sm text-gray-500">Aktuális mód: <span class="font-medium text-red-500">Munka</span></p>
       
       <!-- Add Pomodoro History Display -->
       <div class="mt-4 pt-3 border-t border-gray-100">
-        <h3 class="text-sm font-medium text-gray-700 mb-2 text-center">Pomodoro Előzmények</h3>
+        <h3 class="text-sm font-medium text-gray-700 mb-2 text-center">Pomodoro History</h3>
         <div id="pomodoro-history" class="flex flex-wrap justify-center gap-2">
           <!-- Pomodoro markers will be added here dynamically -->
         </div>
@@ -110,7 +109,7 @@
     <!-- Task Section -->
     <section class="bg-white p-5 rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100 col-span-1 md:col-span-2">
       <h2 class="text-lg md:text-xl font-semibold mb-3 md:mb-4 flex items-center gap-2">
-        <span class="text-blue-500">📋</span> Feladatok
+        <span class="text-blue-500">📋</span> Tasks
       </h2>
       <ul id="task-list" class="space-y-2 max-h-[300px] md:max-h-[400px] overflow-y-auto">
         <!-- Task items go here -->
@@ -131,34 +130,28 @@
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
         </svg>
-        Hozzáadás
+        <span>Add task</span>
       </button>
     </section>
 
     <!-- Daily Stats -->
     <section class="bg-white p-5 rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100 col-span-1 md:col-span-3">
       <h2 class="text-lg md:text-xl font-semibold mb-4 flex items-center gap-2">
-        <span class="text-green-500">📊</span> Statisztika
+        <span class="text-green-500">📊</span> Statistics
       </h2>
       
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
         <div class="bg-gradient-to-br from-green-50 to-green-100 p-4 rounded-xl border border-green-200">
-          <p class="text-gray-600 text-sm mb-1">Mai teljesített feladatok</p>
+          <p class="text-gray-600 text-sm mb-1">Completed tasks</p>
           <p class="text-2xl font-bold text-green-600" id="done-count">0</p>
         </div>
         
         <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-xl border border-blue-200">
-          <p class="text-gray-600 text-sm mb-1">Aktív feladatok</p>
+          <p class="text-gray-600 text-sm mb-1">Active tasks</p>
           <p class="text-2xl font-bold text-blue-600" id="active-count">0</p>
         </div>
-        
-        <div class="bg-gradient-to-br from-red-50 to-red-100 p-4 rounded-xl border border-red-200">
-          <p class="text-gray-600 text-sm mb-1">Teljesített Pomodorók</p>
-          <p class="text-2xl font-bold text-red-600" id="pomodoro-count">0</p>
-        </div>
-      </div>
       <div class="mt-6">
-        <h3 class="text-sm font-medium text-gray-700 mb-2">Pomodoro Statisztika</h3>
+        <h3 class="text-sm font-medium text-gray-700 mb-2">Pomodoro Statistics</h3>
         <div id="pomodoro-stats" class="bg-white rounded-lg p-3 border border-gray-200 shadow-sm">
           <!-- Stats will be dynamically generated here -->
         </div>

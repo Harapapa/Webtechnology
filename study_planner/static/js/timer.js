@@ -1,6 +1,94 @@
+/**
+ * Timer script for a Pomodoro study planner application.
+ * Handles timer functionality, subject management, and statistics display.
+ */
+
+// Global variables
+/**
+ * @type {number | null} timer - Interval ID for the timer.
+ * @type {number} seconds - Remaining seconds for the current timer.
+ * @type {number} totalSeconds - Total seconds for the timer.
+ * @type {Object} subjectData - Object storing Pomodoro counts for each subject.
+ * @type {string} currentSubject - Currently selected subject.
+ * @type {number} pomodoroCount - Total number of completed Pomodoro cycles.
+ */
+
+// Event listener for DOMContentLoaded
+/**
+ * Initializes the timer script, sets up event listeners, and restores previous state.
+ * - Populates the subject dropdown.
+ * - Restores previously selected subject.
+ * - Updates the timer display and Pomodoro statistics.
+ */
+
+// Function: updatePomodoroStats
+/**
+ * Updates the Pomodoro statistics display.
+ * - Displays a message if no Pomodoro cycles are completed.
+ * - Sorts subjects by Pomodoro count and displays percentages.
+ * - Creates badges for each subject with a color-coded percentage.
+ */
+
+// Function: populateSubjectDropdown
+/**
+ * Populates the subject dropdown with unique subjects from tasks and existing Pomodoro data.
+ * - Clears existing options in the dropdown.
+ * - Adds subjects from tasks stored in localStorage.
+ * - Adds subjects from existing Pomodoro statistics.
+ * - Sorts subjects alphabetically and appends them to the dropdown.
+ */
+
+// Function: updateTimerDisplay
+/**
+ * Updates the timer display on the page.
+ * - Formats the remaining time as MM:SS.
+ * - Updates the progress circle to reflect the remaining time.
+ */
+
+// Function: updateProgressCircle
+/**
+ * Updates the progress circle's stroke offset to visually represent the timer's progress.
+ * @param {number} percentage - The percentage of time remaining (0 to 1).
+ */
+
+// Function: startTimer
+/**
+ * Starts the Pomodoro timer.
+ * - Validates that a subject is selected before starting.
+ * - Decrements the timer every second and updates the display.
+ * - Handles the end of the timer by updating statistics and prompting for a break.
+ * - Adds a visual marker for the completed Pomodoro cycle.
+ */
+
+// Function: getSubjectColors
+/**
+ * Generates a consistent color mapping for subjects.
+ * @returns {Object} - An object mapping subjects to color classes.
+ */
+
+// Function: addPomodoroMarker
+/**
+ * Adds a visual marker for a completed Pomodoro cycle.
+ * - Assigns a color based on the subject.
+ * - Animates the marker's entrance.
+ * @param {string} subject - The subject associated with the completed Pomodoro.
+ */
+
+// Function: pauseTimer
+/**
+ * Pauses the Pomodoro timer by clearing the interval.
+ */
+
+// Function: resetTimer
+/**
+ * Resets the Pomodoro timer to its initial state.
+ * - Pauses the timer.
+ * - Resets the remaining time to the default value.
+ * - Updates the timer display.
+ */
 let timer;
-let seconds = 10;
-let totalSeconds = 10;
+let seconds = 1500;
+let totalSeconds = 1500;
 let subjectData = JSON.parse(localStorage.getItem('pomodoroSubjects')) || {};
 let currentSubject = localStorage.getItem('currentSubject') || '';
 let pomodoroCount = parseInt(localStorage.getItem('pomodoroCount')) || 0;

@@ -1,3 +1,4 @@
+
 const taskList = document.getElementById("task-list");
 const doneCount = document.getElementById("done-count");
 const activeCount = document.getElementById("active-count");
@@ -134,12 +135,8 @@ function deleteTask(id, btn) {
 }
 
 function updateStats() {
-  const all = taskList.querySelectorAll("li");
+  const all = taskList.querySelectorAll("li"); 
   const done = taskList.querySelectorAll("input:checked");
   doneCount.textContent = done.length;
   activeCount.textContent = all.length - done.length;
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-  loadTasks();
-});
